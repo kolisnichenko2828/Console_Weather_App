@@ -1,7 +1,7 @@
 fun main() {
     println("Hello Weather!")
     val weather = Weather()
-    var city = ""
+    var city: String
     while(true) {
         print("введите город: ")
         city = readLine() as String

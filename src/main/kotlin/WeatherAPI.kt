@@ -37,50 +37,50 @@ interface WeatherAPI {
 }
 
 
-class WeatherResponse {
-    var location: Location? = null
-    var current: Current? = null
-}
+data class WeatherResponse(
+    val location: Location?,
+    val current: Current?
+)
 
-class Location {
-    var name: String? = null
-    var region: String? = null
-    var country: String? = null
-    var lat = 0.0
-    var lon = 0.0
-    var tz_id: String? = null
-    var localtime_epoch: Long = 0
-    var localtime: String? = null
-}
+data class Location (
+    val name: String?,
+    val region: String?,
+    val country: String?,
+    val lat: Double,
+    val lon: Double,
+    val tz_id: String?,
+    val localtime_epoch: Long,
+    val localtime: String?,
+)
 
-class Current {
-    var last_updated_epoch: Long = 0
-    var last_updated: String? = null
-    var temp_c = 0.0
-    var temp_f = 0.0
-    var is_day = 0
-    var condition: Condition? = null
-    var wind_mph = 0.0
-    var wind_kph = 0.0
-    var wind_degree = 0
-    var wind_dir: String? = null
-    var pressure_mb = 0.0
-    var pressure_in = 0.0
-    var precip_mm = 0.0
-    var precip_in = 0.0
-    var humidity = 0
-    var cloud = 0
-    var feelslike_c = 0.0
-    var feelslike_f = 0.0
-    var vis_km = 0.0
-    var vis_miles = 0.0
-    var uv = 0.0
-    var gust_mph = 0.0
-    var gust_kph = 0.0
-}
+data class Current (
+    val last_updated_epoch: Long,
+    val last_updated: String?,
+    val temp_c: Double,
+    val temp_f: Double,
+    val is_day: Double,
+    val condition: Condition?,
+    val wind_mph: Double,
+    val wind_kph: Double,
+    val wind_degree: Int,
+    val wind_dir: String?,
+    val pressure_mb: Double,
+    val pressure_in: Double,
+    val precip_mm: Double,
+    val precip_in: Double,
+    val humidity: Double,
+    val cloud: Double,
+    val feelslike_c: Double,
+    val feelslike_f: Double,
+    val vis_km: Double,
+    val vis_miles: Double,
+    val uv: Double,
+    val gust_mph: Double,
+    val gust_kph: Double
+)
 
-class Condition {
-    var text: String? = null
-    var icon: String? = null
-    var code = 0
-}
+class Condition (
+    val text: String?,
+    val icon: String?,
+    val code: Int
+)
