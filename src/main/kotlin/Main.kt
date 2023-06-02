@@ -1,3 +1,5 @@
 fun main() {
-    println("Hello World!")
+    println("Hello Weather!")
+    val weather = Weather()
+    weather.getWeather("London")
 }
