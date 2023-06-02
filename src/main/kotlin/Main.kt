@@ -13,6 +13,8 @@ fun main() {
                 val response: WeatherResponse = weather.getWeather(city)
                 println("страна: ${response.location?.country}")
                 println("температура: ${response.current?.temp_c}")
+                println("текст иконки: ${response.current?.condition?.text}")
+                println("ссылка на иконку: ${response.current?.condition?.icon}")
                 // println("вся инфа: ${response}")
             } catch (e: Exception) {
                 println(e)
