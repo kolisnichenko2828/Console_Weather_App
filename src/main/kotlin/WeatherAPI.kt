@@ -44,7 +44,7 @@ data class WeatherResponse(
     val current: Current?
 )
 
-data class Location (
+data class Location(
     val name: String?,
     val region: String?,
     val country: String?,
@@ -55,7 +55,7 @@ data class Location (
     val localtime: String?,
 )
 
-data class Current (
+data class Current(
     val last_updated_epoch: Long,
     val last_updated: String?,
     val temp_c: Double,
@@ -81,7 +81,7 @@ data class Current (
     val gust_kph: Double
 )
 
-class Condition (
+data class Condition(
     val text: String?,
     val icon: String?,
     val code: Int
