@@ -10,7 +10,8 @@ fun main() {
         } else {
             try {
                 println("получаю инфу ...")
-                weather.getWeather(city)
+                val response: WeatherResponse = weather.getWeather(city)
+                println("температура: ${response.current?.temp_c}")
             } catch (e: Exception) {
                 print(e)
                 continue
