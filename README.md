@@ -1,2 +1,2 @@
 # Console_Weather_App
-Console app that use weatherapi.com with retrofit2
+Console app that uses weatherapi.com with retrofit2
