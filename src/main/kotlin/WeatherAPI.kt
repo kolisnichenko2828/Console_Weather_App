@@ -7,7 +7,6 @@ import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 const val API_KEY: String = "01146fdd46a844f7a6793903230206"
-var _city: String = "London"
 class Weather {
     fun getWeather(city: String) {
         val okHttpClient = OkHttpClient.Builder()
