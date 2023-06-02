@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
-const val API_KEY: String = "01146fdd46a844f7a6793903230206"
 class Weather {
+    private val API_KEY: String = "01146fdd46a844f7a6793903230206"
     fun getWeather(city: String): WeatherResponse {
         val okHttpClient = OkHttpClient.Builder()
             .callTimeout(2, TimeUnit.MINUTES)
@@ -25,7 +25,7 @@ class Weather {
 
         var response: WeatherResponse
         runBlocking {
-            response = service.getWeather(API_KEY, city, "no")
+            response = service.getCurrentWeather(API_KEY, city, "no")
         }
         return response
     }
@@ -33,7 +33,9 @@ class Weather {
 
 interface WeatherAPI {
     @GET("current.json?")
-    suspend fun getWeather(@Query("key") key: String, @Query("q") q: String, @Query("aqi") aqi: String): WeatherResponse
+    suspend fun getCurrentWeather(@Query("key") key: String,
+                                  @Query("q") q: String,
+                                  @Query("aqi") aqi: String): WeatherResponse
 }
 
 
