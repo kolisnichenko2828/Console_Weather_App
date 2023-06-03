@@ -25,7 +25,7 @@ class Weather {
 
         var response: WeatherResponse
         runBlocking {
-            response = service.getCurrentWeather(API_KEY, city, "no")
+            response = service.getCurrentWeather(API_KEY, city, "no", "ru")
         }
         return response
     }
@@ -36,7 +36,7 @@ interface WeatherAPI {
     suspend fun getCurrentWeather(@Query("key") key: String,
                                   @Query("q") q: String,
                                   @Query("aqi") aqi: String,
-                                  @Query("lang") lang: String = "ru"): WeatherResponse
+                                  @Query("lang") lang: String): WeatherResponse
 }
 
 
